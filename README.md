@@ -4,7 +4,7 @@
 
 __Course by Rocketseat__
 
-Layout followed from this [link](https://www.figma.com/file/EgOhyj1Inz14dhWGVhRlhr/GoFinances?node-id=1%3A863);
+Layout followed from this [link](https://www.figma.com/file/EgOhyj1Inz14dhWGVhRlhr/GoFinances?node-id=1%3A863)
 
 Install dependencies
 
@@ -15,7 +15,7 @@ Yarn
 Run app
 
 ```shell
-Yarn dev:server
+Yarn start
 ```
 
 Test app
