@@ -1,6 +1,12 @@
 # 🪓 Ax-grinding | React Js Fundamentals challenge GoFinances Web | GoStack course by RocketSeat
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/adaolima/reactjs-fundamentals-challenge-gostack)](https://github.com/adaolima/reactjs-fundamentals-challenge-gostack)
 
+<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="satya-pati-562193171"><a class="LI-simple-link" href='https://www.linkedin.com/in/adaolima/?trk=profile-badge'>Adão Lima</a></div>
+
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+
+
 ## 🚀 GoStack exercise by Adão Lima
 
 __Course by Rocketseat__
