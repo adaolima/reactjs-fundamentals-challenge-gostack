@@ -35,7 +35,7 @@ Yarn test
 
 ### 🛠TOOLs
 
-- [![JavaScript](https://img.shields.io/badge/Javascript&color=yellow&logo=javascript)]Javascript ES6/ES7
+- [![JavaScript](https://img.shields.io/badge/javascript-js-yellow?logo=javascript)]Javascript ES6/ES7
 
 
 ### ✅TO DOs
