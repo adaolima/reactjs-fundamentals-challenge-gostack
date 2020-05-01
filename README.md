@@ -35,11 +35,18 @@ Yarn test
 
 ### 🛠TOOLs
 
-- ![JavaScript](https://img.shields.io/badge/javascript-Language-yellow?logo=javascript)Javascript ES6/ES7
-- ![NodeJS](https://img.shields.io/badge/nodejs-Server-green?logo=nodejs) NodeJS
-- ![ReactJS](https://img.shields.io/badge/reactjs-UI-blue?logo=react) ReactJS
-- ![Styled Components](https://img.shields.io/badge/StyledComponents-UI-DB7093?logo=styled-components) Styled Components
-- ![Docker](https://img.shields.io/badge/docker-DevOps-2496ED?logo=docker) Docker
+- [x] ![JavaScript](https://img.shields.io/badge/javascript-Language-yellow?logo=javascript)
+- [x] ![TypeScript](https://img.shields.io/badge/typescript-SuperSet-007ACC?logo=typescript)
+- [x] ![CSS3](https://img.shields.io/badge/css3-Style-1572B6?logo=css3)
+- [x] ![HTML5](https://img.shields.io/badge/html5-UI-E34F26?logo=html5)
+- [x] ![NodeJS](https://img.shields.io/badge/nodejs-Server-green?logo=nodejs)
+- [x] ![PostgreSQL](https://img.shields.io/badge/postgresql-Database-336791?logo=postgresql)
+- [x] ![ReactJS](https://img.shields.io/badge/reactjs-UI-blue?logo=react) 
+- [x] ![Styled Components](https://img.shields.io/badge/StyledComponents-Style-DB7093?logo=styled-components)
+- [x] ![Docker](https://img.shields.io/badge/docker-DevOps-2496ED?logo=docker)
+- [x] ![Jest](https://img.shields.io/badge/jest-Test-C21325?logo=jest)
+- [x] ![Git](https://img.shields.io/badge/git-VersionControl-C21325?logo=git)
+- [x] ![Yarn](https://img.shields.io/badge/yarn-PackageManager-2C8EBB?logo=yarn)
 
 
 ### ✅TO DOs
