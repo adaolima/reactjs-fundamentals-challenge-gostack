@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 import moment from 'moment';
+import 'moment/locale/pt-br';
+
+import sortBy from 'lodash.sortby';
 
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
+import arrow from '../../assets/arrow.svg';
 
 import api from '../../services/api';
 
@@ -34,18 +38,64 @@ interface Balance {
 const Dashboard: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [balance, setBalance] = useState<Balance>({} as Balance);
+  const [lastIncome, setLastIncome] = useState<Transaction | undefined>(
+    {} as Transaction,
+  );
+  const [lastOutcome, setLastOutcome] = useState<Transaction | undefined>(
+    {} as Transaction,
+  );
 
   useEffect(() => {
     async function loadTransactions(): Promise<Transaction[]> {
       const response = await api.get('/transactions');
       const getTransactions = response.data.transactions;
       const getBalance = response.data.balance;
-      setTransactions(getTransactions);
+      setTransactions(sortBy(getTransactions, ['title']));
       setBalance(getBalance);
       return getTransactions;
     }
     loadTransactions();
   }, []);
+
+  useEffect(() => {
+    const outcomeFiltered = transactions.filter(
+      item => item.type === 'outcome',
+    );
+    const outcomeDates = outcomeFiltered.map(item =>
+      moment(item.created_at, 'DD/MM/YYYY'),
+    );
+    const lastOutcomeDate = moment.max(outcomeDates);
+    const incomeFiltered = transactions.filter(item => item.type === 'income');
+    const incomeDates = incomeFiltered.map(item =>
+      moment(item.created_at, 'DD/MM/YYYY'),
+    );
+    const lastIncomeDate = moment.max(incomeDates);
+
+    const lastIncomeFinal = incomeFiltered.find(item => {
+      if (
+        moment(lastIncomeDate).format() ===
+        moment(item.created_at, 'DD/MM/YYYY').format()
+      ) {
+        return item;
+      }
+    });
+
+    const lastOutcomeFinal = outcomeFiltered.find(item => {
+      if (
+        moment(lastOutcomeDate).format() ===
+        moment(item.created_at, 'DD/MM/YYYY').format()
+      ) {
+        return item;
+      }
+    });
+
+    setLastIncome(lastIncomeFinal);
+    setLastOutcome(lastOutcomeFinal);
+  }, [transactions]);
+
+  function handleSortBy(target: string): void {
+    setTransactions(sortBy(transactions, [target]));
+  }
 
   return (
     <>
@@ -60,6 +110,9 @@ const Dashboard: React.FC = () => {
             <h1 data-testid="balance-income">
               {formatValue(Number(balance.income))}
             </h1>
+            <span>
+              {`Última entrada ${moment(lastIncome?.created_at).fromNow()}`}
+            </span>
           </Card>
           <Card>
             <header>
@@ -69,6 +122,9 @@ const Dashboard: React.FC = () => {
             <h1 data-testid="balance-outcome">
               {formatValue(Number(balance.outcome))}
             </h1>
+            <span>
+              {`Última saída ${moment(lastOutcome?.created_at).fromNow()}`}
+            </span>
           </Card>
           <Card total>
             <header>
@@ -78,6 +134,14 @@ const Dashboard: React.FC = () => {
             <h1 data-testid="balance-total">
               {formatValue(Number(balance.total))}
             </h1>
+            <span className="legend-balance">
+              {`Última balanço ${moment
+                .max([
+                  moment(lastOutcome?.created_at),
+                  moment(lastIncome?.created_at),
+                ])
+                .fromNow()}`}
+            </span>
           </Card>
         </CardContainer>
 
@@ -85,10 +149,22 @@ const Dashboard: React.FC = () => {
           <table>
             <thead>
               <tr>
-                <th>Título</th>
-                <th>Preço</th>
-                <th>Categoria</th>
-                <th>Data</th>
+                <th onClick={() => handleSortBy('title')}>
+                  <span> Título </span>
+                  <img src={arrow} alt="Arrow" />
+                </th>
+                <th onClick={() => handleSortBy('value')}>
+                  <span>Preço</span>
+                  <img src={arrow} alt="Arrow" />
+                </th>
+                <th onClick={() => handleSortBy('category')}>
+                  <span>Categoria</span>
+                  <img src={arrow} alt="Arrow" />
+                </th>
+                <th onClick={() => handleSortBy('created_at')}>
+                  <span>Data</span>
+                  <img src={arrow} alt="Arrow" />
+                </th>
               </tr>
             </thead>
 
