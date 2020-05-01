@@ -44,6 +44,7 @@ const Dashboard: React.FC = () => {
   const [lastOutcome, setLastOutcome] = useState<Transaction | undefined>(
     {} as Transaction,
   );
+  const [isFiltered, setIsFiltered] = useState<string>('title');
 
   useEffect(() => {
     async function loadTransactions(): Promise<Transaction[]> {
@@ -95,6 +96,7 @@ const Dashboard: React.FC = () => {
 
   function handleSortBy(target: string): void {
     setTransactions(sortBy(transactions, [target]));
+    setIsFiltered(target);
   }
 
   return (
@@ -149,19 +151,31 @@ const Dashboard: React.FC = () => {
           <table>
             <thead>
               <tr>
-                <th onClick={() => handleSortBy('title')}>
+                <th
+                  onClick={() => handleSortBy('title')}
+                  className={`${isFiltered === 'title' && 'active'}`}
+                >
                   <span> Título </span>
                   <img src={arrow} alt="Arrow" />
                 </th>
-                <th onClick={() => handleSortBy('value')}>
+                <th
+                  onClick={() => handleSortBy('value')}
+                  className={`${isFiltered === 'value' && 'active'}`}
+                >
                   <span>Preço</span>
                   <img src={arrow} alt="Arrow" />
                 </th>
-                <th onClick={() => handleSortBy('category')}>
+                <th
+                  onClick={() => handleSortBy('category')}
+                  className={`${isFiltered === 'category' && 'active'}`}
+                >
                   <span>Categoria</span>
                   <img src={arrow} alt="Arrow" />
                 </th>
-                <th onClick={() => handleSortBy('created_at')}>
+                <th
+                  onClick={() => handleSortBy('created_at')}
+                  className={`${isFiltered === 'created_at' && 'active'}`}
+                >
                   <span>Data</span>
                   <img src={arrow} alt="Arrow" />
                 </th>
