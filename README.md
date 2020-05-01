@@ -24,6 +24,6 @@ Test app
 Yarn test
 ```
 
-### ⚡️💡 Insights
+<!-- ### ⚡️💡 Insights -->
 
 
