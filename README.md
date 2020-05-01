@@ -35,7 +35,11 @@ Yarn test
 
 ### 🛠TOOLs
 
-- [![JavaScript](https://img.shields.io/badge/javascript-js-yellow?logo=javascript)]Javascript ES6/ES7
+- ![JavaScript](https://img.shields.io/badge/javascript-Language-yellow?logo=javascript)Javascript ES6/ES7
+- ![NodeJS](https://img.shields.io/badge/nodejs-Server-green?logo=nodejs) NodeJS
+- ![ReactJS](https://img.shields.io/badge/reactjs-UI-blue?logo=react) ReactJS
+- ![Styled Components](https://img.shields.io/badge/StyledComponents-UI-DB7093?logo=styled-components) Styled Components
+- ![Docker](https://img.shields.io/badge/docker-DevOps-2496ED?logo=docker) Docker
 
 
 ### ✅TO DOs
