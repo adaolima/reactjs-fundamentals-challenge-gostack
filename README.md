@@ -39,7 +39,7 @@ Yarn test
 - [x] ![TypeScript](https://img.shields.io/badge/typescript-SuperSet-007ACC?logo=typescript)
 - [x] ![CSS3](https://img.shields.io/badge/css3-Style-1572B6?logo=css3)
 - [x] ![HTML5](https://img.shields.io/badge/html5-UI-E34F26?logo=html5)
-- [x] ![NodeJS](https://img.shields.io/badge/nodejs-Server-green?logo=nodejs)
+- [x] ![NodeJS](https://img.shields.io/badge/nodejs-Server-green?logo=node-dot-js)
 - [x] ![PostgreSQL](https://img.shields.io/badge/postgresql-Database-336791?logo=postgresql)
 - [x] ![ReactJS](https://img.shields.io/badge/reactjs-UI-blue?logo=react) 
 - [x] ![Styled Components](https://img.shields.io/badge/StyledComponents-Style-DB7093?logo=styled-components)
