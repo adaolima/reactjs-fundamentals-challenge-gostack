@@ -33,6 +33,11 @@ Test app
 Yarn test
 ```
 
+### 🛠TOOLs
+
+- [![JavaScript](https://img.shields.io/badge/Javascript&color=yellow&logo=javascript)]Javascript ES6/ES7
+
+
 ### ✅TO DOs
 
 - [x] Responsive
@@ -52,3 +57,4 @@ Yarn test
 - File[] type suggest properties, helped a lot to find the correct property;
 - Moment Javascript Library, for date managiment;
 - Lodash powerful Javascript library. Many resources, I used the sortBy.
+
